@@ -34,28 +34,28 @@ class Square:
         Return:
             Area.
         '''
-        return self.__size ** 2
+        return (self.__size ** 2)
     
     def __eq__(self, vs):
         '''Compare method'''
-        return self.area() == vs.area()
+        return (self.area() == vs.area())
 
     def __ne__(self, vs):
         '''Compare method'''
-        return self.area() != vs.area()
+        return (self.area() != vs.area())
 
     def __gt__(self, vs):
         '''Compare method'''
-        return self.area() > vs.area()
+        return (self.area() > vs.area())
 
     def __ge__(self, vs):
         '''Compare method'''
-        return self.area() >= vs.area()
+        return (self.area() >= vs.area())
 
     def __lt__(self, vs):
         '''Compare method'''
-        return self.area() < vs.area()
+        return (self.area() < vs.area())
 
     def __le__(self, vs):
         '''Compare method'''
-        return self.area() <= vs.area()
+        return (self.area() <= vs.area())
