@@ -38,8 +38,8 @@ class Square:
 
     def my_print(self):
         '''Print the square.'''
-        for x in range(self.size):
-            for y in range(self.size):
-                print("#", end="\n" if y is self.size - 1 and x != y else "")
+        for x in range(self.__size):
+            for y in range(self.__size):
+                print("#", end="\n" if y is self.__size - 1 and x != y else "")
         print()
 
