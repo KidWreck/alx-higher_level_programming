@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-
-'''This is the 5th quiz module.'''
+'''This is the 5th quiz module for a class square.'''
 
 
 class Square:
