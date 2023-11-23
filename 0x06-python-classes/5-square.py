@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-'''6th quiz.'''
+'''6th quiz.
+    for this quiz we really should douc
+    to help the viewer understand'''
 
 class Square:
     '''This my square.'''
