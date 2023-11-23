@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-'''This is the 5th quiz.'''
+
+'''This is the 5th quiz module.'''
 
 
 class Square:
@@ -22,6 +23,7 @@ class Square:
             VlueError: size < 0
         '''
         return self.__size
+
     @size.setter
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
