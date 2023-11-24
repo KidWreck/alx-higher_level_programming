@@ -1,0 +1,86 @@
+The ``5-text_indentation`` module
+============================
+
+Using ``text_indentation``
+---------------------
+
+
+Import module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test no delim:
+    >>> text_indentation("Hello Hassan")
+    Hello Hassan
+
+Test string with spaces b4:
+    >>> text_indentation("Hassan          ")
+    Hassan
+
+Test string with spaces aft:
+    >>> text_indentation("        Hassan")
+    Hassan
+    
+Test string with spaces between:
+    >>> text_indentation("     Hassan          ")
+    Hassan
+    
+Test empty string:
+    >>> text_indentation("")
+
+Test string with empty string 2:
+    >>> text_indentation("    ")
+
+Test simple:
+    >>> text_indentation("Hello: Hassan")
+    Hello:
+    <BLANKLINE>
+    Hassan
+
+Test delims with spaces:
+    >>> text_indentation("      ?:  :  ")
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Test newline:
+    >>> text_indentation("\n")
+    <BLANKLINE>
+
+Test newline 2:
+    >>> text_indentation("\n\n")
+    <BLANKLINE>
+    <BLANKLINE>
+
+Test all delimeters with spaces:
+    >>> text_indentation("Hello   :     Hassan    ?    cool.    hi     ")
+    Hello:
+    <BLANKLINE>
+    Hassan?
+    <BLANKLINE>
+    cool.
+    <BLANKLINE>
+    hi
+
+Test just delimeters:
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Test none:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test number:
+    >>> text_indentation(33)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
