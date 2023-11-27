@@ -38,7 +38,7 @@ class Rectangle:
             raise ValueError("highet must be >= 0")
         self.__highet = value
 
-   def area(self):
+    def area(self):
         """Calculate the area."""
         return self.__width * self.__highet
 
