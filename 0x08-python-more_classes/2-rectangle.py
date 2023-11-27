@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""1. Real definition of a rectangle."""
+"""2. Area and Perimeter."""
 
 
 class Rectangle:
@@ -14,7 +14,7 @@ class Rectangle:
     def width(self):
         """Getter for private attribute."""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """Setter for private attribute."""
@@ -28,7 +28,7 @@ class Rectangle:
     def height(self):
         """Getter for private attribute."""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """Setter for private attribute."""
@@ -41,9 +41,9 @@ class Rectangle:
     def area(self):
         """Calculate the area."""
         return self.__width * self.__height
-    
+
     def perimeter(self):
         """Calculate the perimeter."""
         if self.__width == 0 or self.__height == 0:
-             return 0
+            return 0
         return (self.__width + self.__height) * 2

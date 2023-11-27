@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""1. Real definition of a rectangle."""
+"""3. String representation."""
 
 
 class Rectangle:
@@ -37,3 +37,20 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        """Calculate the area."""
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """Calculate the perimeter."""
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return (self.__width + self.__height) * 2
+
+    def __str__(self):
+        """Return a string of '#' rectangle."""
+        s = ""
+        if self.width != 0 and self.height != 0:
+            s += "/n".join("#" * self.__width for i in range(self.__height))
+        return s
