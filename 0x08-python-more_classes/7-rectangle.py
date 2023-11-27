@@ -56,7 +56,7 @@ class Rectangle:
         """Return a string of '#' rectangle."""
         if not self.width or not self.height:
             return ""
-        return ((str(self.print_symbol) * self.width + "\n") * self.height)
+        return ((str(self.print_symbol) * self.width + "\n") * self.height)[:-1]
 
     def __repr__(self):
         """Return a represintaition of '#' rectangle."""
