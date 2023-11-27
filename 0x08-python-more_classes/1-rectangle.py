@@ -29,7 +29,7 @@ class Rectangle:
         '''getter for private attribute'''
         return self.__highet
     
-    @width.setter
+    @highet.setter
     def highet(self, val):
         '''setter for private attribute'''
         if type(val) is not int:
