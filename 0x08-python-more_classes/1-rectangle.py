@@ -16,13 +16,13 @@ class Rectangle:
         return self.__width
     
     @width.setter
-    def width(self, val):
+    def width(self, value):
         '''setter for private attribute'''
-        if type(val) is not int:
+        if type(value) is not int:
             raise TypeError("width must be an integer")
-        if val < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = val
+        self.__width = value
 
     @property
     def highet(self):
@@ -30,10 +30,10 @@ class Rectangle:
         return self.__highet
     
     @highet.setter
-    def highet(self, val):
+    def highet(self, value):
         '''setter for private attribute'''
-        if type(val) is not int:
+        if type(value) is not int:
             raise TypeError("highet must be an integer")
-        if val < 0:
+        if value < 0:
             raise ValueError("highet must be >= 0")
-        self.__highet = val
+        self.__highet = value
