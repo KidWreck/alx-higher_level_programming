@@ -25,25 +25,25 @@ class Rectangle:
         self.__width = value
 
     @property
-    def highet(self):
+    def height(self):
         """Getter for private attribute."""
-        return self.__highet
+        return self.__height
     
-    @highet.setter
-    def highet(self, value):
+    @height.setter
+    def height(self, value):
         """Setter for private attribute."""
         if type(value) is not int:
-            raise TypeError("highet must be an integer")
+            raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("highet must be >= 0")
-        self.__highet = value
+            raise ValueError("height must be >= 0")
+        self.__height = value
 
     def area(self):
         """Calculate the area."""
-        return self.__width * self.__highet
-
+        return self.__width * self.__height
+    
     def perimeter(self):
         """Calculate the perimeter."""
-        if self.__width == 0 or self.__highet == 0:
+        if self.__width == 0 or self.__height == 0:
              return 0
-        return (self.__width + self.__highet) * 2
+        return (self.__width + self.__height) * 2

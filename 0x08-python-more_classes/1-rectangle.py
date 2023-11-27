@@ -22,18 +22,18 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value 
+        self.__width = value
 
     @property
-    def highet(self):
+    def height(self):
         """Getter for private attribute."""
-        return self.__highet
+        return self.__height
     
-    @highet.setter
-    def highet(self, value):
+    @height.setter
+    def height(self, value):
         """Setter for private attribute."""
         if type(value) is not int:
-            raise TypeError("highet must be an integer")
+            raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("highet must be >= 0")
-        self.__highet = value 
+            raise ValueError("height must be >= 0")
+        self.__height = value
