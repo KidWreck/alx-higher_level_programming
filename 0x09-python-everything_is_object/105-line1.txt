@@ -1,6 +1,1 @@
 262
-
-# NSMALLPOSINTS is a macro that holds 257 (non-inclusive)
-# NSMALLNEGINTS is a macro that holds -5 (inclusive)
-# so it's acctuly an array of 262 integers (most commonly used ints). 
-# And is basically used to access these integers fast.
