@@ -4,7 +4,7 @@
 
 class MyInt(int):
     '''Rebel version of an integer'''
-    
+
     def __new__(cls, *args, **arg):
         '''create a new instance of the class'''
         return super(MyInt, cls).__new__(cls, *args, **arg)
