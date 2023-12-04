@@ -1,0 +1,80 @@
+The ``7-base_geometry`` module
+============================
+
+Using ``BaseGeometry``
+---------------------
+
+
+Import function from module:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Correct Class Type test:
+    >>> b_g = BaseGeometry()
+    >>> type(b_g) == BaseGeometry
+    True
+
+area method is an instance method:
+    >>> type(BaseGeometry.__dict__['area'])
+    <class 'function'>
+
+area method normal test:
+    >>> bg.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+integer_validator is an instance method:
+    >>> type(BaseGeometry.__dict__['integer_validator'])
+    <class 'function'>
+
+integer_validator method float.0 value:
+    >>> bg.integer_validator("hassan", 3.0)
+    Traceback (most recent call last):
+    TypeError: hassan must be an integer
+
+integer_validator method float.x value:
+    >>> bg.integer_validator("hassan", 3.14)
+    Traceback (most recent call last):
+    TypeError: hassan must be an integer
+
+integer_validator method string value:
+    >>> bg.integer_validator("hassan", "bar")
+    Traceback (most recent call last):
+    TypeError: hassan must be an integer
+
+integer_validator method bool value:
+    >>> bg.integer_validator("hassan", True)
+    Traceback (most recent call last):
+    TypeError: hassan must be an integer
+
+integer_validator method list value:
+    >>> bg.integer_validator("hassan", [1])
+    Traceback (most recent call last):
+    TypeError: hassan must be an integer
+
+integer_validator method None value:
+    >>> bg.integer_validator("hassan", None)
+    Traceback (most recent call last):
+    TypeError: hassan must be an integer
+
+integer_validator method 0 value:
+    >>> bg.integer_validator("hassan", 0)
+    Traceback (most recent call last):
+    ValueError: hassan must be greater than 0
+
+integer_validator method negative value:
+    >>> bg.integer_validator("hassan", -1000)
+    Traceback (most recent call last):
+    ValueError: hassan must be greater than 0
+
+integer_validator method ok value:
+    >>> bg.integer_validator("key", 88)
+
+integer_validator method tuple:
+    >>> bg.integer_validator("hassan", (1, 2))
+    Traceback (most recent call last):
+    TypeError: hassan must be an integer
+
+integer_validator method dic:
+    >>> bg.integer_validator("hassan", {1, 2})
+    Traceback (most recent call last):
+    TypeError: hassan must be an integer
