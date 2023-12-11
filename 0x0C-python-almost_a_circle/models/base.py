@@ -15,4 +15,51 @@ class Base:
             self.id = id
         else:
             Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+            self.id = Base.__nb_object
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        '''JSON a dictionary.'''
+        if list_dictionaries is None or not list_dictionaries:
+            return "[]"
+        else:
+            return dumps(list_dictionaries)
+
+    @staticmethod
+    def from_json_string(json_string):
+        '''Un-JSON a dictionary.'''
+        if json_string is None or not json_string:
+            return []
+        return loads(json_string)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        '''Saves JSON object to file.'''
+        if list_objs is not None:
+            list_objs = [obj.to_dictionary() for obj in list_objs]
+        with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
+            f.write(cls.to_json_string(list_objs))
+
+    @classmethod
+    def create(cls, **dictionary):
+        '''Loads from dictionary.'''
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if cls is Rectangle:
+            new = Rectangle(1, 1)
+        elif cls is Square:
+            new = Square(1)
+        else:
+            new = None
+        new.update(**dictionary)
+        return new
+
+    @classmethod
+    def load_from_file(cls):
+        '''Loads string from file and un-JSON.'''
+        from os import path
+        myf = "{}.json".format(cls.__name__)
+        if not path.isfile(myf):
+            return []
+        with open(myf, "r", encoding="utf-8") as f:
+            return [cls.create(**li) for li in cls.from_json_string(f.read())]
