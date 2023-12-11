@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''Module for Base class.'''
-import json
+from json import dumps, loads
 import csv
 
 
@@ -36,7 +36,7 @@ class Base:
     def save_to_file(cls, list_objs):
         '''Saves JSON object to file.'''
         if list_objs is not None:
-            list_objs = [obj.to_dictionary() for obj in list_objs]
+            list_objs = [o.to_dictionary() for o in list_objs]
         with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(list_objs))
 
@@ -58,8 +58,8 @@ class Base:
     def load_from_file(cls):
         '''Loads string from file and un-JSON.'''
         from os import path
-        myf = "{}.json".format(cls.__name__)
-        if not path.isfile(myf):
+        file = "{}.json".format(cls.__name__)
+        if not path.isfile(file):
             return []
-        with open(myf, "r", encoding="utf-8") as f:
+        with open(file, "r", encoding="utf-8") as f:
             return [cls.create(**li) for li in cls.from_json_string(f.read())]
